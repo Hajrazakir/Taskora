@@ -1,11 +1,23 @@
 import path from 'path';
+
 import react from '@vitejs/plugin-react';
+
 import tailwindcss from '@tailwindcss/vite';
+
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: './',
+  base: '/Taskora/',
   plugins: [react(), tailwindcss()],
-  resolve: { alias: { '@': path.resolve(import.meta.dirname, 'src') }, dedupe: ['react', 'react-dom'] },
-  server: { port: 5174, host: '0.0.0.0' },
+  resolve: {
+    alias: {
+      '@': path.resolve(import.meta.dirname, 'src'),
+    },
+    dedupe: ['react', 'react-dom'],
+  },
+  server: {
+    port: 5174,
+    host: '0.0.0.0',
+  },
 });
+
